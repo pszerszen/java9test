@@ -1,0 +1,5 @@
+some text shit
+
+more shit
+
+almost EOF
