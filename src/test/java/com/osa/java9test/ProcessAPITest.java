@@ -14,6 +14,7 @@ class ProcessAPITest {
     @Test
     void testAllProcesses() {
         ProcessHandle.allProcesses()
+                .filter(ProcessHandle::isAlive)
                 .map(ProcessHandle::info)
                 .filter(info -> info.startInstant().isPresent())
                 .map(Object::toString)

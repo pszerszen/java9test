@@ -7,11 +7,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.summarizingInt;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class CollectionFactoriesTest {
 

@@ -4,18 +4,16 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 import static java.util.Arrays.compare;
 import static java.util.Arrays.mismatch;
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class ArraysImprovementsTest {
     @Test
     void arrayEqualsTest() {
         int[] existRows = { 0, 1, 2, 3, 4, 5 };
-        int[] newRows = { 3, 4, 5, 1, 2, 0 };
+        int[] newRows =   { 3, 4, 5, 1, 2, 0 };
 
         assertAll(() -> assertFalse(Arrays.equals(existRows, newRows)),
                 () -> assertTrue(Arrays.equals(
@@ -28,10 +26,10 @@ class ArraysImprovementsTest {
 
     @Test
     void compareArraysTest() {
-        int[] tomMarks = { 5, 6, 7, 8, 9, 10 };
-        int[] aliceMarks = { 5, 6, 7, 8, 9, 10 };
+        int[] tomMarks =   { 5, 6, 7, 8,  9, 10 };
+        int[] aliceMarks = { 5, 6, 7, 8,  9, 10 };
         int[] daisyMarks = { 5, 6, 7, 10, 9, 10 };
-        int[] maryMarks = { 5, 6, 7, 8 };
+        int[] maryMarks =  { 5, 6, 7, 8         };
 
         assertAll(() -> assertEquals(0, compare(tomMarks, aliceMarks)),
                 () -> assertEquals(-1, compare(tomMarks, daisyMarks)),
@@ -40,9 +38,9 @@ class ArraysImprovementsTest {
 
     @Test
     void compareSliceArraysTest() {
-        int[] tomMarks = { 5, 6, 7, 8, 9, 10 };
+        int[] tomMarks =   { 5, 6, 7, 8,  9, 10 };
         int[] daisyMarks = { 5, 6, 7, 10, 9, 10 };
-        int[] maryMarks = { 5, 6, 7, 8 };
+        int[] maryMarks =  { 5, 6, 7, 8 };
 
         assertAll(
                 () -> assertEquals(0, compare(

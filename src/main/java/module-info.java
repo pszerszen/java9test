@@ -1,3 +1,3 @@
-module java9.language.features.example {
+module com.osa.java9test {
     requires jdk.incubator.httpclient;
 }
