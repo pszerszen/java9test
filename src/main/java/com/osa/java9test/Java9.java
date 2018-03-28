@@ -3,6 +3,8 @@ package com.osa.java9test;
 import jdk.incubator.http.HttpClient;
 import jdk.incubator.http.HttpRequest;
 import jdk.incubator.http.HttpResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.CookieManager;
@@ -13,6 +15,8 @@ import java.util.concurrent.Executors;
 
 public class Java9 {
 
+    private static final Logger log = LoggerFactory.getLogger(Java9.class);
+
     public static void main(String[] args) throws IOException, InterruptedException {
         HttpClient httpClient = HttpClient.newBuilder()
                 .followRedirects(HttpClient.Redirect.SAME_PROTOCOL)
@@ -20,7 +24,7 @@ public class Java9 {
                 .version(HttpClient.Version.HTTP_2)
                 .executor(Executors.newCachedThreadPool())
                 .priority(256)
-                .cookieManager(new CookieManager())
+                .cookieHandler(new CookieManager())
 //                .authenticator(new Authenticator() {
 //                    @Override
 //                    protected PasswordAuthentication getPasswordAuthentication() {
@@ -38,6 +42,6 @@ public class Java9 {
                 .build();
 
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandler.asString());
-        System.out.println(response.body());
+        log.error(response.body());
     }
 }
