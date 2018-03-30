@@ -43,5 +43,6 @@ public class Java9 {
 
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandler.asString());
         log.error(response.body());
+        System.exit(0);
     }
 }
